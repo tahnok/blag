@@ -1,3 +1,7 @@
-# Title
+Example post with *markdown* and _things_ like [that](this)
 
-Example post
+ * lists
+ * like
+ * this
+ * too!
+

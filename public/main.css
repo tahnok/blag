@@ -1,19 +1,30 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  height:100%;
+}
+
 body {
   font-family: "Ubuntu Mono", sans-serif;
   color: #eee;
   background-color: #222;
-  padding: 0px;
-  margin: 0px;
 }
 
 .header {
   text-align: center;
-  background-color: #666;
+  background-color: #DF7E1A;
   padding: 8px;
+}
+
+.container {
+  min-height:100%;
+  position:relative;
 }
 
 .main {
   padding: 20px;
+  padding-bottom: 10px;
+  height: 100%
 }
 
 .post {
@@ -21,6 +32,9 @@ body {
 }
 
 footer {
-  padding: 8px;
+  padding-top: 10px;
+  position: absolute;
+  bottom:0;
+  width: 100%;
   text-align: center;
 }
