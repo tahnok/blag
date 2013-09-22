@@ -14,8 +14,10 @@ task :generate do
   Dir.glob('posts/*.md') do |post|
     @posts << {
       time: File.open(post).mtime.to_i,
+      title: post.basename,
       body: CGI.escapeHTML(renderer.render(File.read(post)))
     }
   end
+  @posts.sort!{|a,b| a[:time] <=> b[:time] }
   File.open('posts.json', 'w').write(@posts.to_json)
 end
