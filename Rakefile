@@ -25,7 +25,7 @@ task :generate do
       body: CGI.escapeHTML(renderer.render(File.read(post)))
     }
   end
-  @posts.sort!{|a,b| b[:time] <=> a[:time] }
+  @posts.sort!{|a,b| b[:title] <=> a[:title] }
   File.open('posts.json', 'w').write(@posts.to_json)
 end
 
