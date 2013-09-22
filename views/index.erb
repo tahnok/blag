@@ -1,0 +1,7 @@
+<h1><%= @blog['title'] %></h1>
+
+<% @blog['posts'].each do |options| %>
+  <p><%= options['body'] %></p>
+  <p>Created at: <%= options['timestamp'] %>
+  <hr>
+<% end %>
