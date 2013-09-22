@@ -8,7 +8,10 @@ A very simple blogging platform written in ruby
  1. Run `rake generate` to refresh `posts.json`
  1. run `rake` to start the server!
 
+## Author
 
- ## License
+[Wesley Ellis](http://about.tahnok.me)
+
+## License
 
  GPLv3. See `LICENSE
