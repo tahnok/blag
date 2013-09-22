@@ -20,7 +20,7 @@ task :generate do
   renderer = Redcarpet::Markdown.new(Redcarpet::Render::HTML, :autolink => true, :space_after_headers => true)
   Dir.glob('posts/*.md') do |post|
     @posts << {
-      time: File.open(post).mtime.to_i,
+      time: File.open(post).mtime.strftime('%F %R'),
       title: File.basename(post, '.md'),
       body: CGI.escapeHTML(renderer.render(File.read(post)))
     }
