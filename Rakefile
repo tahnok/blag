@@ -14,10 +14,33 @@ task :generate do
   Dir.glob('posts/*.md') do |post|
     @posts << {
       time: File.open(post).mtime.to_i,
-      title: post.basename,
+      title: File.basename(post, '.md'),
       body: CGI.escapeHTML(renderer.render(File.read(post)))
     }
   end
-  @posts.sort!{|a,b| a[:time] <=> b[:time] }
+  @posts.sort!{|a,b| b[:time] <=> a[:time] }
   File.open('posts.json', 'w').write(@posts.to_json)
+end
+
+task :new, :title do |t, args|
+  if ARGV[1]
+    title = ARGV[1]
+  else
+    puts "enter new title:"
+    title = STDIN.gets.chomp
+  end
+  post_path = "posts/#{title}.md"
+  if File.exists?(post_path)
+    puts "error, name already taken"
+  else
+    File.open(post_path, 'w').write('')
+    if ENV['EDITOR']
+      system "#{ENV['EDITOR']} #{post_path}"
+    end
+  end
+end
+
+task :blog, :title do |t, args|
+  Rake::Task[:new].invoke(args)
+  Rake::Task[:generate].invoke
 end
