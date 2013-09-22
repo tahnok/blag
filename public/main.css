@@ -1,0 +1,26 @@
+body {
+  font-family: "Ubuntu Mono", sans-serif;
+  color: #eee;
+  background-color: #222;
+  padding: 0px;
+  margin: 0px;
+}
+
+.header {
+  text-align: center;
+  background-color: #666;
+  padding: 8px;
+}
+
+.main {
+  padding: 20px;
+}
+
+.post {
+  padding-bottom: 6px;
+}
+
+footer {
+  padding: 8px;
+  text-align: center;
+}
