@@ -6,13 +6,28 @@ html, body {
 
 body {
   font-family: "Ubuntu Mono", sans-serif;
-  color: #eee;
+  color: #ccc;
   background-color: #222;
+}
+
+a:link {
+  text-decoration: none;
+  font-weight: bold;
+  color: #fff;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #ccc;
 }
 
 .header {
   text-align: center;
   background-color: #DF7E1A;
+  color: #fff;
   padding: 8px;
 }
 
