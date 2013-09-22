@@ -21,7 +21,7 @@ task :generate do
   Dir.glob('posts/*.md') do |post|
     @posts << {
       time: File.open(post).mtime.strftime('%F %R'),
-      title: File.basename(post, '.md'),
+      title: File.basename(post, '.md').gsub('_', ' '),
       body: CGI.escapeHTML(renderer.render(File.read(post)))
     }
   end
@@ -37,6 +37,7 @@ task :new, :title do |t, args|
     puts "enter new title:"
     title = STDIN.gets.chomp
   end
+  title.gsub!(' ', '_').squeeze!('_')
   post_path = "posts/#{title}.md"
   if File.exists?(post_path)
     puts "error, name already taken"
