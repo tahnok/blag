@@ -14,4 +14,4 @@ A very simple blogging platform written in ruby
 
 ## License
 
- GPLv3. See `LICENSE
+ GPLv3. See `LICENSE`
