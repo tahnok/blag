@@ -1,5 +1,7 @@
 {
   "title": "This is my title",
   "subtitle": "subtitle",
-  "author": "Wesley Ellis"
+  "author": "Wesley Ellis",
+  "user": "admin",
+  "password": "example"
 }
