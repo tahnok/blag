@@ -37,7 +37,8 @@ task :new, :title do |t, args|
     puts "enter new title:"
     title = STDIN.gets.chomp
   end
-  title.gsub!(' ', '_').squeeze!('_')
+  title.gsub!(' ', '_')
+  title.squeeze!('_')
   post_path = "posts/#{title}.md"
   if File.exists?(post_path)
     puts "error, name already taken"
